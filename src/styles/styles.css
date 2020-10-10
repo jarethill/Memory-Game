@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* #instructions {
+    position: absolute;
+    top: -3em;
+    right: 1.65em;
+} */
+
+/* @media screen and (max-height: 860px) {
+    header {
+        margin-bottom: 10em;
+    }
+} */
+
+@keyframes popout {
+    from {
+        transform: scale(0.98);
+        z-index: 999;
+    }
+    80% {
+        transform: scale(1.05);
+        z-index: 999;
+    }
+    to {
+        transform: scale(1.04);
+        z-index: 999;
+    }
+}
+@-webkit-keyframes popout {
+    from {
+        -webkit-transform: scale(0.98);
+    }
+    80% {
+        -webkit-transform: scale(1.05);
+    }
+    to {
+        -webkit-transform: scale(1.04);
+    }
+}
