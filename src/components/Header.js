@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 
 export default function Header({ headerHeight }) {
     return (
-        <AppBar style={{ height: headerHeight }}>
+        <AppBar position='fixed' style={{ height: headerHeight }}>
             <Toolbar>
                 <Typography variant='h6'>Memory Game</Typography>
             </Toolbar>
