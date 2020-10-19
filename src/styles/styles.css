@@ -4,17 +4,11 @@
     box-sizing: border-box;
 }
 
-/* #instructions {
+#instructions {
     position: absolute;
-    top: -3em;
-    right: 1.65em;
-} */
-
-/* @media screen and (max-height: 860px) {
-    header {
-        margin-bottom: 10em;
-    }
-} */
+    top: -2.6em;
+    right: 1.5em;
+}
 
 @keyframes popout {
     from {

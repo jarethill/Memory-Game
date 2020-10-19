@@ -11,16 +11,17 @@ import tileData from '../data/TileData';
 function ImageGrid({ width, headerHeight }) {
     const useStyles = makeStyles((theme) => ({
         imageGrid: {
-            height: `100vh`,
+            // height: `100vh`,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyItems: 'center',
+            marginTop: +headerHeight.slice(0, 2) + 80,
         },
         gridList: {
-            width: '100%',
+            // width: '100%',
             // height: '100%',
-            maxWidth: '100%',
+            // maxWidth: '100%',
             overflowX: 'hidden',
         },
         tile: {
@@ -29,6 +30,9 @@ function ImageGrid({ width, headerHeight }) {
             '&:hover': {
                 animation: 'popout .3s ease forwards',
             },
+        },
+        instructions: {
+            display: 'none !important',
         },
         container: {
             display: 'flex',
@@ -59,8 +63,8 @@ function ImageGrid({ width, headerHeight }) {
 
     return (
         <section id='image-grid' className={classes.imageGrid}>
-            <Instructions />
             <Container maxWidth={width} className={classes.container}>
+                <Instructions />
                 <GridList cellHeight={250} className={classes.gridList} cols={getGridListCols()}>
                     {tileData.map((tile, index) => (
                         <GridListTile key={tile.img + index} className={classes.tile}>
