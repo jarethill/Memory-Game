@@ -49,6 +49,12 @@ const DialogActions = withStyles((theme) => ({
     },
 }))(MuiDialogActions);
 
+const instructionsStyles = {
+    position: 'absolute',
+    top: '-2.6em',
+    right: '1.5em',
+};
+
 export default function Instructions() {
     const [open, setOpen] = React.useState(false);
     const theme = useTheme();
@@ -61,7 +67,7 @@ export default function Instructions() {
     };
 
     return (
-        <div id='instructions'>
+        <div id='instructions' style={instructionsStyles}>
             <Button variant='outlined' color='primary' onClick={handleClickOpen}>
                 Instructions
             </Button>

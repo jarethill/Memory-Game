@@ -4,10 +4,8 @@
     box-sizing: border-box;
 }
 
-#instructions {
-    position: absolute;
-    top: -2.6em;
-    right: 1.5em;
+html {
+    scroll-behavior: smooth;
 }
 
 @keyframes popout {

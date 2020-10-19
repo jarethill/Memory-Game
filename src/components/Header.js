@@ -22,9 +22,15 @@ const flexCenter = {
 
 export default function Header({ headerHeight, currentTheme, toggleTheme }) {
     return (
-        <AppBar position='fixed' style={{ height: headerHeight }}>
+        <AppBar position='fixed' style={{ height: `${headerHeight}px` }}>
             <Toolbar>
-                <Typography variant='h6'>Memory Game</Typography>
+                <Typography
+                    variant='h6'
+                    style={{ cursor: 'pointer' }}
+                    onMouseDown={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                >
+                    Memory Game
+                </Typography>
                 <div id='right-side-container' style={rightSideContainerStyles}>
                     <div id='options' style={flexCenter}>
                         {currentTheme === 'light' ? (

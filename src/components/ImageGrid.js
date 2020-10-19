@@ -11,18 +11,15 @@ import tileData from '../data/TileData';
 function ImageGrid({ width, headerHeight }) {
     const useStyles = makeStyles((theme) => ({
         imageGrid: {
-            // height: `100vh`,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyItems: 'center',
-            marginTop: +headerHeight.slice(0, 2) + 80,
+            marginTop: headerHeight + 80,
+            marginBottom: '3em',
         },
         gridList: {
-            // width: '100%',
-            // height: '100%',
-            // maxWidth: '100%',
-            overflowX: 'hidden',
+            overflow: 'hidden',
         },
         tile: {
             cursor: 'pointer',
@@ -37,9 +34,6 @@ function ImageGrid({ width, headerHeight }) {
         container: {
             display: 'flex',
             position: 'relative',
-            // width: '100%',
-            // height: '100%',
-            // maxHeight: '100%',
         },
     }));
 

@@ -28,12 +28,19 @@ function App() {
         },
     });
 
-    const [headerHeight, setHeaderHeight] = useState('60px');
-    const [currentTheme, setCurrentTheme] = useState(lightTheme);
+    const [headerHeight, setHeaderHeight] = useState(60);
+    const [currentTheme, setCurrentTheme] = useState(() => {
+        return localStorage.getItem('theme') === 'dark' ? darkTheme : lightTheme;
+    });
 
     function toggleTheme() {
-        if (currentTheme.palette.type === 'light') setCurrentTheme(darkTheme);
-        else if (currentTheme.palette.type === 'dark') setCurrentTheme(lightTheme);
+        if (currentTheme.palette.type === 'light') {
+            setCurrentTheme(darkTheme);
+            localStorage.setItem('theme', 'dark');
+        } else if (currentTheme.palette.type === 'dark') {
+            setCurrentTheme(lightTheme);
+            localStorage.setItem('theme', 'light');
+        }
     }
 
     // Set theme background on html element
