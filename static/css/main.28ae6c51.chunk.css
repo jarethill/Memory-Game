@@ -1,0 +1,2 @@
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}li[data-type=tile]:hover{-webkit-animation:popout .3s ease forwards;animation:popout .3s ease forwards}@keyframes popout{0%{transform:scale(.98);z-index:999}80%{transform:scale(1.05);z-index:999}to{transform:scale(1.04);z-index:999}}@-webkit-keyframes popout{0%{-webkit-transform:scale(.98)}80%{-webkit-transform:scale(1.05)}to{-webkit-transform:scale(1.04)}}
+/*# sourceMappingURL=main.28ae6c51.chunk.css.map */

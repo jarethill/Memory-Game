@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/Memory-Game/static/css/main.28ae6c51.chunk.css",
+    "main.js": "/Memory-Game/static/js/main.e37684cf.chunk.js",
+    "main.js.map": "/Memory-Game/static/js/main.e37684cf.chunk.js.map",
+    "runtime-main.js": "/Memory-Game/static/js/runtime-main.0da77a42.js",
+    "runtime-main.js.map": "/Memory-Game/static/js/runtime-main.0da77a42.js.map",
+    "static/js/2.41f0156a.chunk.js": "/Memory-Game/static/js/2.41f0156a.chunk.js",
+    "static/js/2.41f0156a.chunk.js.map": "/Memory-Game/static/js/2.41f0156a.chunk.js.map",
+    "index.html": "/Memory-Game/index.html",
+    "precache-manifest.29d4d4b3c5fa2a7ac3ce2da7cf48ab50.js": "/Memory-Game/precache-manifest.29d4d4b3c5fa2a7ac3ce2da7cf48ab50.js",
+    "service-worker.js": "/Memory-Game/service-worker.js",
+    "static/css/main.28ae6c51.chunk.css.map": "/Memory-Game/static/css/main.28ae6c51.chunk.css.map",
+    "static/js/2.41f0156a.chunk.js.LICENSE.txt": "/Memory-Game/static/js/2.41f0156a.chunk.js.LICENSE.txt",
+    "static/media/celeste.jpg": "/Memory-Game/static/media/celeste.fa918dd8.jpg",
+    "static/media/etna.jpg": "/Memory-Game/static/media/etna.64a6162a.jpg",
+    "static/media/gwyndolin.jpg": "/Memory-Game/static/media/gwyndolin.ecf18b12.jpg",
+    "static/media/lifestealer.jpg": "/Memory-Game/static/media/lifestealer.fea3b322.jpg",
+    "static/media/mega-man.png": "/Memory-Game/static/media/mega-man.18b5c425.png",
+    "static/media/miriam.jpg": "/Memory-Game/static/media/miriam.4b80e470.jpg",
+    "static/media/plague-knight.webp": "/Memory-Game/static/media/plague-knight.3a76b04b.webp",
+    "static/media/raziel.jpg": "/Memory-Game/static/media/raziel.d3a07968.jpg",
+    "static/media/reptile.jpg": "/Memory-Game/static/media/reptile.bee21973.jpg",
+    "static/media/skull-kid.png": "/Memory-Game/static/media/skull-kid.62d445e8.png",
+    "static/media/trevor-philips.jpg": "/Memory-Game/static/media/trevor-philips.0bc6c558.jpg",
+    "static/media/tyrael.jpg": "/Memory-Game/static/media/tyrael.2278b80c.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0da77a42.js",
+    "static/js/2.41f0156a.chunk.js",
+    "static/css/main.28ae6c51.chunk.css",
+    "static/js/main.e37684cf.chunk.js"
+  ]
+}
