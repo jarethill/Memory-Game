@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Instructions from './Instructions';
 import { makeStyles } from '@material-ui/core/styles';
 import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
@@ -8,14 +8,15 @@ import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import tileData from '../data/TileData';
 
-function ImageGrid({ width, headerHeight }) {
+
+function ImageGrid({ width, headerHeight, score, setScore, bestScore, setBestScore, setIsGameover, setPlayerWon, setLastClickedTile, tiles, setTiles, alreadyClickedNames, setAlreadyClickedNames, shuffleArray }) {
     const useStyles = makeStyles((theme) => ({
         imageGrid: {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyItems: 'center',
-            marginTop: headerHeight + 80,
+            paddingTop: headerHeight + 80,
             marginBottom: '3em',
         },
         gridList: {
@@ -25,7 +26,7 @@ function ImageGrid({ width, headerHeight }) {
             cursor: 'pointer',
             transition: 'all 1s fade-out',
             '&:hover': {
-                animation: 'popout .3s ease forwards',
+                // animation: 'popout .3s ease forwards',
             },
         },
         instructions: {
@@ -55,13 +56,41 @@ function ImageGrid({ width, headerHeight }) {
         return 1;
     };
 
+
+    // Check win condition
+    useEffect(() => {
+        if (alreadyClickedNames.length === tiles.length) {
+            setPlayerWon(true);
+        }
+    }, [tiles, alreadyClickedNames, setPlayerWon])
+
+    function handleMouseDown(e) {
+        const element = e.target.closest('li');
+        const selectedCharacterName = element.dataset.name;
+        setLastClickedTile(element);
+        
+        if (alreadyClickedNames.includes(selectedCharacterName)) {
+            if (score > bestScore) {
+                setBestScore(score);
+            }
+
+            setAlreadyClickedNames([]);
+            setIsGameover(true);
+        } else {
+            setScore((prevScore) => prevScore + 1);
+            setAlreadyClickedNames((prevNames) => [...prevNames, selectedCharacterName])
+            setTiles(shuffleArray([...tiles]))
+        }
+        
+    }
+
     return (
         <section id='image-grid' className={classes.imageGrid}>
             <Container maxWidth={width} className={classes.container}>
                 <Instructions />
-                <GridList cellHeight={250} className={classes.gridList} cols={getGridListCols()}>
-                    {tileData.map((tile, index) => (
-                        <GridListTile key={tile.img + index} className={classes.tile}>
+                <GridList cellHeight={250} className={classes.gridList} cols={getGridListCols()} onMouseDown={(e) => handleMouseDown(e)}>
+                    {tiles.map((tile, index) => (
+                        <GridListTile key={tile.img} className={classes.tile} data-name={tile.name} data-type='tile'>
                             <img src={tile.img} alt={tile.name} />
                             <GridListTileBar title={tile.name} subtitle={<span>From: {tile.game}</span>} />
                         </GridListTile>

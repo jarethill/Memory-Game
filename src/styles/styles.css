@@ -8,6 +8,10 @@ html {
     scroll-behavior: smooth;
 }
 
+li[data-type='tile']:hover {
+    animation: popout 0.3s ease forwards;
+}
+
 @keyframes popout {
     from {
         transform: scale(0.98);

@@ -20,7 +20,7 @@ const flexCenter = {
     alignItems: 'center',
 };
 
-export default function Header({ headerHeight, currentTheme, toggleTheme }) {
+export default function Header({ headerHeight, currentTheme, toggleTheme, score, bestScore, resetGame }) {
     return (
         <AppBar position='fixed' style={{ height: `${headerHeight}px` }}>
             <Toolbar>
@@ -34,17 +34,17 @@ export default function Header({ headerHeight, currentTheme, toggleTheme }) {
                 <div id='right-side-container' style={rightSideContainerStyles}>
                     <div id='options' style={flexCenter}>
                         {currentTheme === 'light' ? (
-                            <Brightness2Icon style={pointerStyle} onMouseDown={() => toggleTheme()} />
+                            <Brightness2Icon style={pointerStyle} onMouseDown={() => toggleTheme(currentTheme)} />
                         ) : (
-                            <Brightness5Icon style={pointerStyle} onMouseDown={() => toggleTheme()} />
+                            <Brightness5Icon style={pointerStyle} onMouseDown={() => toggleTheme(currentTheme)} />
                         )}
 
-                        <RefreshIcon style={pointerStyle} />
+                        <RefreshIcon style={pointerStyle} onMouseDown={() => resetGame()} />
                     </div>
 
                     <div id='score' style={{ ...flexCenter, flexDirection: 'column', marginLeft: '1em' }}>
-                        <Typography style={{ fontSize: '1rem' }}>Score: 0</Typography>
-                        <Typography style={{ fontSize: '.7rem', alignSelf: 'flex-end' }}>Best: 0</Typography>
+                        <Typography style={{ fontSize: '1rem' }}>Score: {score}</Typography>
+                        <Typography style={{ fontSize: '.7rem', alignSelf: 'flex-end' }}>Best: {bestScore}</Typography>
                     </div>
                 </div>
             </Toolbar>
