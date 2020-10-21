@@ -81,9 +81,13 @@ function App() {
 
     useEffect(() => {
         if (playerWon) {
+            if (score > bestScore) {
+                setBestScore(score)
+            }
+            
             setIsGameover(true);
         }
-    }, [lastClickedTile, playerWon])
+    }, [bestScore, lastClickedTile, playerWon, score])
 
     return (
         <ThemeProvider theme={currentTheme}>
