@@ -6,7 +6,6 @@ import GridList from '@material-ui/core/GridList';
 import Container from '@material-ui/core/Container';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
-import tileData from '../data/TileData';
 
 
 function ImageGrid({ width, headerHeight, score, setScore, bestScore, setBestScore, setIsGameover, setPlayerWon, setLastClickedTile, tiles, setTiles, alreadyClickedNames, setAlreadyClickedNames, shuffleArray }) {
@@ -25,9 +24,6 @@ function ImageGrid({ width, headerHeight, score, setScore, bestScore, setBestSco
         tile: {
             cursor: 'pointer',
             transition: 'all 1s fade-out',
-            '&:hover': {
-                // animation: 'popout .3s ease forwards',
-            },
         },
         instructions: {
             display: 'none !important',
